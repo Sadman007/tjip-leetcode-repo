@@ -1,6 +1,6 @@
 WEEK - 01 <br>
-Every folder contains Code and explanation of that problem <br>
-There's also a video explanation link recorded by me ! <br>
+Every folder contains Code and explanation of that solution code of problem <br>
+There's also a youtube video explanation link recorded by me ! <br>
 
 
 
