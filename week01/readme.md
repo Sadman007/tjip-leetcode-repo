@@ -1,3 +1,7 @@
-Add your week-01's solution to this directory.
-Create a seperate file for each of your solution. Name the file according to the problem name.
+WEEK - 01 <br>
+Every folder contains Code and explanation of that problem <br>
+There's also a video explanation link recorded by me ! <br>
 
+
+
+![ssss](https://user-images.githubusercontent.com/45636041/160425982-39119c00-9a7b-4a65-af89-2428edd0c757.PNG)
