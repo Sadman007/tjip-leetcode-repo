@@ -12,14 +12,16 @@ var maxProfit = function (prices) {
   return maximum;
 };
 
+// Time complexity O(n)
+//Space complexity O(1)
 var maxProfitOptimized = function (prices) {
-  let startPrice = prices[0];
+  let priceStart = prices[0];
   let maximum = 0;
   for (let i = 1; i < prices.length; i++) {
-    if (startPrice > prices[i]) {
-      startPrice = prices[i];
+    if (priceStart > prices[i]) {
+      priceStart = prices[i];
     }
-    let profit = prices[i] - startPrice;
+    let profit = prices[i] - priceStart;
     maximum = Math.max(maximum, profit);
   }
   return maximum;
