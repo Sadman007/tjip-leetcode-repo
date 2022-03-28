@@ -1,0 +1,10 @@
+int firstMissingPositive(vector<int>& nums){
+    unordered_set<int> collection(nums.begin(), nums.end());
+    int array_size = nums.size();
+    for(int i = 1; i <= array_size + 1; i++){
+        if(collection.count(i) == 0){
+            return i;
+        }
+    }
+    return 0;
+}
