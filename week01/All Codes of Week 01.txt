@@ -1,0 +1,29 @@
+Problem: 136. Single Number
+Code:
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        for(int i=1; i<nums.size(); i++){
+            nums[0]^=nums[i];
+        }
+        return nums[0];
+    }
+};
+
+---------------------------------------------------
+Problem: 283. Move Zeroes
+Code:
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int pos=0;
+        while(pos<nums.size() && nums[pos]!=0) pos++;
+        
+        for(int i=pos+1; i<nums.size(); i++){
+            if(nums[i]!=0){
+                swap(nums[i], nums[pos]);
+                pos++;
+            }
+        }
+    }
+};
