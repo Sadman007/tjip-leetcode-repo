@@ -2,6 +2,9 @@ here we used 2 approaches <br>
 our first Approach costs O(n) memory <br>
 how ?
 <br>
+
+video explanation link : https://youtu.be/75Jj3LR9YAg
+
 /******************** first Approach ************************/
    
 //Time Complexity = O(n) <br>
