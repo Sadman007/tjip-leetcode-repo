@@ -4,7 +4,9 @@ how ?
 <br>
 
 video explanation link : https://youtu.be/75Jj3LR9YAg
-
+<br>
+LeetCode Profile Link : https://leetcode.com/nahin_cdr/ 
+<br>
 /******************** first Approach ************************/
    
 //Time Complexity = O(n) <br>
