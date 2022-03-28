@@ -6,18 +6,18 @@ LeetCode Profile Link : https://leetcode.com/nahin_cdr/
 <br>
 NAZMUL HAQUE NAHIN  <br>
       
- ///Explanation : <br> <br>
+ ///Explanation : <br> 
        
 first we saw that 
        we need find such two integers from our given array that their sum will be exactly equal to our target value  <br>
-       then we should return their 2 indices in any order as vector ; <br> <br>
+       then we should return their 2 indices in any order as vector ; <br> 
        
 theme 1 :  <br>
        if we apply bruteforce method and take a single integer then make sum for rest of the elements of our given array then <br>
        it should cost O(n^2) time complexity and its not optimal solution <br><br>
         ///Time Complexity : O(n^2) <br>
        ///Space Complexity : O(1) <br>
-        <br> <br> <br>
+        <br> 
        
 theme 2 :  <br>
        here we can take a container like MAP and keep every single element of our array which is not equal to our (target - current)  <br>
