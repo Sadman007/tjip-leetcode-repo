@@ -1,0 +1,46 @@
+int maxProfit(vector<int>& prices) {
+	int max_profit=0;
+        int lowest=prices[0];
+        
+        for(int i=1;i<prices.size();i++){
+           
+            if(prices[i]<lowest){
+                 lowest=prices[i];
+            }
+               
+            
+            int profit=prices[i]-lowest;
+            if(max_profit<profit)
+            {
+                max_profit=profit; 
+            }
+               
+            
+          }
+         return max_profit;
+}
+       
+
+/*
+This is my first solution. I have got TLE for this solution. Then I took some idea from our discord channel while one brother post the solution. 
+
+ int maxProfit(vector<int>& prices) {
+        
+        int max_profit=0;
+        
+        for(int i=0;i<prices.size();i++){
+            
+            for(int j=i+1;j<prices.size();j++){
+                
+                if(prices[i]<prices[j]){
+                    int profit=prices[j]-prices[i];
+                    if(profit>max_profit){
+                        max_profit=profit;
+                    }
+                }
+            }
+        }
+        return max_profit;
+
+
+*/
