@@ -1,7 +1,9 @@
 
 Video Explanation link : https://youtu.be/EhTRqv81CQI
+<br>
 LeetCode Profile Link : https://leetcode.com/nahin_cdr/
-  NAZMUL HAQUE NAHIN  <br>
+<br>
+NAZMUL HAQUE NAHIN  <br>
       
  ///Explanation : <br> <br>
        
