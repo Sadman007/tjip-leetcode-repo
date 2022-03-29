@@ -1,0 +1,48 @@
+//1st approch. Here time complexity O(n) and space complexity O(n)
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        unordered_map<int,int>seen;
+        
+        for(int i = 0;i < n; i++)
+        {
+            int x = nums[i];
+            int y = target-x;
+            if(seen.find(y) != seen.end())
+            {
+                return {i,seen[y]};
+            }
+            seen[nums[i]] = i;
+        }
+        return {-1,-1};
+    }
+};
+
+
+//2nd approch. Here time complexity O(nlogn) and space complexity O(n)
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        vector<pair<int,int>> seen;
+        for(int i = 0; i<n;i++)
+        {
+            seen.push_back({nums[i],i});
+        }    
+        sort(seen.begin(),seen.end());
+        int start = 0,end = n-1;
+        while(start<end)
+        {
+            int sum = seen[start].first + seen[end].first;
+            if(sum == target)
+                return {seen[start].second, seen[end].second};
+            else if(sum>target)
+                end--;
+            else
+                start++;
+        }
+        return {-1,-1};
+    }
+};
+    
