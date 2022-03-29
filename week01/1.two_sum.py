@@ -1,5 +1,5 @@
 # problem link: https://leetcode.com/problems/two-sum/
-
+# 0(N) time | 0(N) space
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         lists = {}
