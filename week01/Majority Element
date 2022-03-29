@@ -1,0 +1,29 @@
+//1st approach. Here Time O(nlogn) and Space O(1)
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int n = nums.size();
+        sort(nums.begin(),nums.end());
+        return nums[n/2];
+    }
+};
+
+//2nd approach(mosh algorithm). Here Time O(n) and Space O(1)
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int candidate = 0, vote = 0;
+        for(auto a:nums)
+        {
+            if(vote == 0)
+            {
+                candidate=a;
+            }
+            if(candidate == a)
+                vote++;
+            else
+                vote--;
+        }
+        return candidate;
+    }
+};
