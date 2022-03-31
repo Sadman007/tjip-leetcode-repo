@@ -14,17 +14,11 @@ class Solution:
                 if nums[first] + nums[second] + nums[third] == 0:
                     result.add((nums[first] , nums[second] , nums[third]))
                     second  +=1
-                    third -=1
-                    
-                            
+                    third -=1          
                 elif nums[first] + nums[second] + nums[third] <= 0:
                     second +=1
                 else:
-                    third -=1
-                    
-                    
-                        
-                    
+                    third -=1              
         return list(result)
 
             

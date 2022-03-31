@@ -9,8 +9,6 @@ class Solution:
                 current_num = nums[idx]+1
                 while current_num in nums_set:
                     current_sequence +=1
-                    current_num+=1
-                    
-                max_sequence = current_sequence if current_sequence > max_sequence else max_sequence
-                
+                    current_num+=1   
+                max_sequence = current_sequence if current_sequence > max_sequence else max_sequence 
         return max_sequence 
