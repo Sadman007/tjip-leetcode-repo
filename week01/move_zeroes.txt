@@ -1,0 +1,24 @@
+void moveZeroes(vector<int>& nums){
+    int array_size = nums.size();
+    int next_zero_index; //next zero to be moved.
+    bool found_zero = false;
+    //Loop below is for checking if there is indeed a zero present in the array.
+    for(int i = 0; i < array_size; i++){
+        if(nums[i] == 0){
+            next_zero_index = i;
+            found_zero = true;
+            break;
+        }
+    }
+    //if there is indeed a zero present in the array then next loop will change the array.
+    if(found_zero){
+        for(int i = 0; i < array_size; i++){
+            if(nums[i] != 0 && next_zero_index < i && next_zero_index != array_size - 1){
+                int t = nums[i];
+                nums[i] = nums[next_zero_index];
+                nums[next_zero_index] = t;
+                next_zero_index++;
+            }
+        }
+    }
+}
