@@ -57,3 +57,24 @@ public:
         }
     }
 };
+--------------------------------------------------------
+probleem: 31. Next Permutation
+Code:
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int i=nums.size()-1, j=i;
+        
+        while(i>0 && nums[i-1] >= nums[i]){
+            i--;
+        }
+        if(i==0) {
+            sort(nums.begin(), nums.end());
+        }
+        else{
+            while(nums[j]<=nums[i-1]) {j--;}
+            swap(nums[i-1], nums[j]);
+            sort(nums.begin()+i, nums.end());
+        }
+    }
+};
