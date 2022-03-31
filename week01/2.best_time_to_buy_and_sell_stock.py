@@ -25,6 +25,19 @@ class Solution:
                 max_profit = profit
                       
         return max_profit
+
+
+    def maxProfit_2(self, prices):
+        
+        min_value = prices[0]
+        max_profit = 0
+            
+        for idx in range(1, len(prices)):
+            if prices[idx]<=min_value:
+                min_value = prices[idx]      
+            else:
+                max_profit = max(prices[idx]-min_value, max_profit)        
+        return max_profit
     
             
 class TestSolution(unittest.TestCase):
@@ -38,7 +51,7 @@ class TestSolution(unittest.TestCase):
 
     def test_solution(self):
         for prices, expected in self.test_cases:
-            assert Solution().maxProfit(prices) == expected
+            assert Solution().maxProfit_2(prices) == expected
 
 
 if __name__ == "__main__":

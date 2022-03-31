@@ -7,3 +7,5 @@ class Solution:
         for idx in range (1, len(nums)):
             result = result ^ nums[idx]   
         return result
+
+        
