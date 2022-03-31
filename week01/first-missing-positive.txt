@@ -1,0 +1,13 @@
+problem link: https://leetcode.com/problems/first-missing-positive/
+
+int firstMissingPositive(vector<int>& nums) {
+        unordered_set<int> values(nums.begin(),nums.end());
+        
+        for(int i=1 ; i<=nums.size()+1 ; i++){
+            if(!values.count(i)){
+                return i;
+            }
+        }
+        return 0;
+    }
+    

@@ -1,0 +1,29 @@
+Problem Link: https://leetcode.com/problems/trapping-rain-water/
+
+int trap(vector<int>& height) {
+        
+        int leftMax=0,rightMax=0;
+        int l=0,r=height.size()-1;
+        int total=0;
+        
+        while(l<=r){
+            
+            if(leftMax<height[l]) leftMax=height[l];
+            if(rightMax<height[r]) rightMax=height[r];
+            
+            total+= leftMax-height[l];
+            if(r==l) break;
+            total+= rightMax-height[r];
+            
+            if(height[l]<height[r]){
+                l++;
+            } 
+            else if(height[r]<height[l]) r--;
+            else {
+                r--;
+            }
+        }
+        
+        return total;
+        
+    }
