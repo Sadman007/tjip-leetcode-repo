@@ -1,0 +1,1 @@
+{"name":"Local: hi","url":"/Users/qmranik/Desktop/tjip-leetcode-repo/week01/hi.cpp","tests":[{"id":1648737916000,"input":"5\n1 1\n4 0\n0 2\n0 0\n2314 2374","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/qmranik/Desktop/tjip-leetcode-repo/week01/hi.cpp","group":"local","local":true}
