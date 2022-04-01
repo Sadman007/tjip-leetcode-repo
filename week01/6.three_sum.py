@@ -1,4 +1,4 @@
-#O(N^2) time | O(1) space
+#O(N^2) time | O(N) space
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
