@@ -1,0 +1,24 @@
+ int majorityElement(vector<int>& nums) {
+        int vote = 0, winner = 0;
+        
+        for(int i = 0 ;i<nums.size();i++){
+            if(winner == 0 && vote == 0){
+                winner = nums[i];
+                vote++;
+                // cout << winner <<" " << vote <<"\n";
+            }
+            else if(nums[i] == winner){
+                vote++;
+            }
+            else{
+                vote--;
+                if(vote == 0){
+                    winner = 0;
+                }
+                // cout << winner <<" " << vote <<"\n";
+            }
+        }
+        
+        return winner;
+        
+    }
