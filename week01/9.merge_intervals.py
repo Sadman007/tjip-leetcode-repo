@@ -1,4 +1,8 @@
 #O(N) time | O(N) space
+"""
+description: If both ranges have at least one common point, then we say that they’re overlapping. In other words, we say that two ranges {[L_1, R_1]} and \{[L_2, R_2]} are overlapping if: {max(L_1, L_2) <= min(R_1, R_2)}
+On the other hand, non-overlapping ranges don’t have any points in common.
+"""
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:

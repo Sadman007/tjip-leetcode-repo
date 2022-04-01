@@ -1,10 +1,13 @@
 #O(N) time | O(1) space
+"""
+find next permutation: 
+1. find peak value
+2. replace last value with peak's previous value
+3. sort after replaced the values
+"""
 
 class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
         n = len(nums)
         for i in range(n-1, 0, -1):
             if nums[i] > nums[i-1]:
