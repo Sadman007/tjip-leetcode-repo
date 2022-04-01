@@ -1,0 +1,23 @@
+Problem Link: https://leetcode.com/problems/product-of-array-except-self/
+
+vector<int> productExceptSelf(vector<int>& nums) {
+        int suffixProd[nums.size()],prefixProd[nums.size()];
+        int j=nums.size()-2;
+        suffixProd[0]=nums[0];
+        prefixProd[nums.size()-1]=nums[nums.size()-1];
+        for(int i=1 ; i<nums.size() ; i++){
+            suffixProd[i]=nums[i];
+            suffixProd[i]*=suffixProd[i-1];
+            prefixProd[j]=nums[j];
+            prefixProd[j]*=prefixProd[j+1];
+            j--;
+        }
+        vector<int> ara;
+        ara.push_back(prefixProd[1]);
+        
+        for(int i=1 ; i<nums.size()-1 ; i++){
+            ara.push_back(suffixProd[i-1]*prefixProd[i+1]);
+        }
+        ara.push_back(suffixProd[nums.size()-2]);
+        return ara;
+    }

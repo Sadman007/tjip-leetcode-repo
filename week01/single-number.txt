@@ -1,0 +1,9 @@
+ Problem Link: https://leetcode.com/problems/single-number/
+ 
+ int singleNumber(vector<int>& nums) {
+        long long num = nums[0];
+        for(int i=1 ; i<nums.size() ; i++){
+            num^=nums[i];
+        }
+        return num;
+    }
