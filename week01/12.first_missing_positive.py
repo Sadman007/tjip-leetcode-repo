@@ -1,4 +1,4 @@
-# #O(N) time | O(1) space
+# O(N) time | O(1) space
 """
 Description: we need to find from 1 to len(nums)+2. As the condition is return missing positive integers, so the range should be total array_items + 1
 """
