@@ -1,0 +1,11 @@
+int singleNumber(vector<int>& nums){
+    unordered_map<int, int> list;
+    int array_size = nums.size();
+    for(int i = 0; i < array_size; i++){
+        list[nums[i]]++;
+    }
+    for(int i = 0; i < array_size; i++){
+        if(list[nums[i]] == 1) return nums[i];
+    }
+    return 0;
+}
