@@ -1,6 +1,6 @@
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n){
     vector<int> temp;
-    for(int left = 0, right = 0, i = 0; i < m + n; k++){
+    for(int left = 0, right = 0, i = 0; i < m + n; i++){
         if(left >= m){
             temp.push_back(nums2[right]);
             right++;
