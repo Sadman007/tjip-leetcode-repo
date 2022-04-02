@@ -1,0 +1,36 @@
+Problem Link: https://leetcode.com/problems/4sum/
+
+vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        if(nums.size()<4) return {};
+        
+        vector<vector<int>> finalRes;
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        
+       for(int k=0 ; k<nums.size()-3 ; k++){
+           
+           int res=target-nums[k];
+                for(int i=k+1 ; i<nums.size()-2 ; i++){
+                
+                int low=i+1,high=n-1;
+
+                while(low<high){
+                    int sum = nums[low]+nums[high];
+                    int tar=res-nums[i];
+                    if(sum<tar) low++;
+                    else if(sum>tar) high--;
+                    else{
+                        vector<int> ans = {nums[k],nums[i],nums[low],nums[high]};
+                        finalRes.push_back(ans);
+
+                        while(low<high && nums[low]==ans[2]) low++;
+                        while(low<high && nums[high]==ans[3]) high--;
+                    }
+                }
+                while(i+2<nums.size() && nums[i]==nums[i+1]) i++;
+            }
+           while(k+1<nums.size() && nums[k]==nums[k+1]) k++;
+       }
+        
+        return finalRes;
+    }
