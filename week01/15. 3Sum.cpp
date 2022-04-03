@@ -1,4 +1,4 @@
-// T - O(n^2), M - O(n) --> give AC once somehow...otherwise give TLE on 318 no test case always out of total 318 test cases
+// T - O(n^2), M - O(n^2) --> give AC once somehow...otherwise give TLE on 318 no test case always out of total 318 test cases
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
@@ -33,7 +33,7 @@ public:
 
 /**....................................................................**/
 
-// T - O(n^2), M - O(n) --> AC always('map' solution)
+// T - O(n^2), M - O(n^2) --> AC always('map' solution)
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
@@ -69,7 +69,7 @@ public:
 };
 /**....................................................................**/
 
-// T - O(n^2), M - O(n) --> AC always(two pointer solution)
+// T - O(n^2), M - O(n^2) --> AC always(two pointer solution)
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
@@ -104,7 +104,7 @@ public:
 };
 /**....................................................................**/
 
-// T - O(n^2), M - O(n) --> AC always('set' solution)
+// T - O(n^2), M - O(n^2) --> AC always('set' solution)
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
