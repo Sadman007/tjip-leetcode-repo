@@ -1,4 +1,4 @@
-// T - O(n), M - O(1)
+// T - O(n), M - O(n)
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
@@ -22,7 +22,7 @@ public:
 
 /**....................................................................**/
 
-// T - O(n), M - O(1)
+// T - O(n), M - O(n)
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
