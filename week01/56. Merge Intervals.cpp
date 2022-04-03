@@ -1,4 +1,4 @@
-// T - O(nlogn), M - O(n)
+// T - O(nlogn), M - O(n^2)
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
