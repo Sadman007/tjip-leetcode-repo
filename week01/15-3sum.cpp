@@ -12,6 +12,7 @@ public:
             {
                 continue;
             }
+
             int left = i + 1, right = nums.size() - 1;
             while (left < right)
             {
