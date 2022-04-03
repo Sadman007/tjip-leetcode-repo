@@ -1,0 +1,52 @@
+///1. Two Sum
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int sz = nums.size();
+        map<int, int> mp;
+        //for(int i = 0; i < sz; i++) mp[nums[i]] = i;
+        for(int i = 0; i < sz; i++){
+            if(mp.find(target - nums[i]) != mp.end() && i != mp[target-nums[i]]){
+                return {i, mp[target-nums[i]]};
+            }mp[nums[i]] = i;
+        }
+        return {};
+    }
+};
+
+
+
+///15. 3Sum
+
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> res;
+        int n = nums.size();
+        for(int i = 0; i < n-2; i++){
+            
+            int lft = i+1, rht = n-1;
+            while(lft < rht){
+                if(nums[i] + nums[lft] + nums[rht] == 0) {
+                    vector<int> v;
+                    v.push_back(nums[i]);
+                    v.push_back(nums[lft]);
+                    v.push_back(nums[rht]);
+                    res.push_back(v);
+                    while(lft < rht-1 && nums[lft] == nums[lft+1]) lft++;
+                    while(rht > lft && nums[rht] == nums[rht-1]) rht--; 
+                }
+                
+                int rem = 0 - nums[i];
+                if(rem < nums[lft] + nums[rht]) rht--;
+                else lft++;
+            }
+            while(i < n-1 && nums[i] == nums[i+1]) i++;
+        }
+        return res;
+    }
+};
+
+
