@@ -1,4 +1,4 @@
-///1. Two Sum
+//1. Two Sum
 
 class Solution {
 public:
@@ -17,7 +17,7 @@ public:
 
 
 
-///15. 3Sum
+//15. 3Sum
 
 class Solution {
 public:
@@ -50,7 +50,7 @@ public:
 };
 
 
-///41. First Missing Positive
+//41. First Missing Positive
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
@@ -70,5 +70,54 @@ public:
         else return 1;
         for(int i = 0; i < sz; i++) if(nums[i] >= 0) return i+1;
         return sz+1;
+    }
+};
+
+
+
+//56. Merge Intervals
+
+class Solution {
+    public:
+        vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        set<int> points;
+        unordered_map<int, int> mp, isLft, revMp;
+        int sz = intervals.size();
+        for(int i = 0; i < sz; i++){
+            int lft = intervals[i][0], rht = intervals[i][1];
+            isLft[lft] = 1;
+            points.insert(lft);
+            points.insert(rht);
+        }
+        int k = 0;
+        for(int it : points){
+            if(isLft.count(it)){ //key hisebe it thakle 1 return korbe
+                k += 2;
+                mp[it] = k;
+            }
+            else mp[it] = ++k;
+            revMp[k] = it;
+        }
+        int LIM = 100000;
+        int dif[LIM+5];
+        memset(dif, 0, sizeof dif);
+        for(int i = 0; i < sz; i++){
+            int lft = mp[intervals[i][0]], rht = mp[intervals[i][1]];
+            dif[lft] += 1;
+            dif[rht+1] -= 1;
+        }
+        for(int i = 1; i <= LIM; i++) dif[i] += dif[i-1];
+        vector< vector<int> > res;
+        k = 2;
+        while(k < LIM){
+            while(dif[k] == 0 && k <= LIM) k++;
+            int lft = k;
+            while(dif[k] && k <= LIM) k++;
+            int rht = k-1;
+            if(k > LIM) break;
+            res.push_back({revMp[lft], revMp[rht]});
+        }
+
+        return res;
     }
 };
