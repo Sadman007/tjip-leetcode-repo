@@ -194,3 +194,22 @@ public:
         return winner;
     }
 };
+
+
+
+//128. Longest Consecutive Sequence
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        unordered_set<int> bucket(nums.begin(), nums.end());
+        int mxLen = 0;
+        for(int num : bucket){
+            if(!bucket.count(num-1)){
+                int cur = num;
+                while(bucket.count(cur)) cur++;
+                mxLen = max(mxLen, cur - num);
+            }
+        }
+        return mxLen;
+    }
+};
