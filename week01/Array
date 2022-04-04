@@ -213,3 +213,21 @@ public:
         return mxLen;
     }
 };
+
+
+
+//238. Product of Array Except Self
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int sz = nums.size();
+        if(!sz) return {};
+        vector<int> lft(sz), rht(sz), res(sz);
+        lft[0] = 1, rht[sz-1] = 1;
+        for(int i = 1; i < sz; i++) lft[i] = lft[i-1]*nums[i-1];
+        for(int i = sz-2; i >= 0; i--) rht[i] = rht[i+1]*nums[i+1];
+        for(int i = 0; i < sz; i++) res[i] = lft[i]*rht[i];
+        return res;
+    }
+};
