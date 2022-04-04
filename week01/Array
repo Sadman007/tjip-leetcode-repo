@@ -121,3 +121,42 @@ class Solution {
         return res;
     }
 };
+
+
+
+//42. Trapping Rain Water
+
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        deque<int> dq;
+        int sz = height.size();
+        if(!sz) return 0;
+        dq.push_front(height[0]);
+        int last = height[0], res = 0;
+        for(int i = 1; i < sz; i++){
+            int cur = height[i];
+            if(cur >= last){
+                while(dq.size()){
+                    int top = dq.front(); dq.pop_front();
+                    res += last - top;
+                }
+                dq.push_front(cur);
+                last = cur;
+            }
+            else dq.push_front(cur);
+        }
+        while(dq.size()){
+            int last = dq.front(); dq.pop_front();
+            while(dq.size()){
+                int top = dq.front();
+                if(top < last){
+                    res += last - top;
+                    dq.pop_front();
+                }
+                else break;
+            }
+        }
+        return res;
+    }
+};
