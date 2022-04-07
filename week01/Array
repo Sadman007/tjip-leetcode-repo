@@ -338,3 +338,37 @@ public:
         return res;
     }
 };
+
+
+
+//Meeting Room II
+class Solution {
+public:
+    int minMeetingRooms(vector<Interval> &intervals) {
+        int sz = intervals.size();
+        set<int> points;
+        unordered_map<int, int> mp;
+        for(Interval it : intervals){
+            int lft = it.start, rht = it.end;
+            points.insert(lft);
+            points.insert(rht);
+        }
+        int k = 0;
+        for(int it : points){
+            mp[it] = k++;
+        }
+        int LIM = 5000000;
+        int dif[LIM+5];
+        memset(dif, 0, sizeof dif);
+        for(Interval it : intervals){
+            int lft = mp[it.start], rht = mp[it.end];
+            dif[lft] += 1;
+            dif[rht+1] -= 1;
+        }
+        for(int i = 1; i <= LIM; i++) dif[i] += dif[i-1];
+        int res = 0;
+        for(int i = 0; i <= LIM; i++) res = max(res, dif[i]);
+
+        return res;
+    }
+};
