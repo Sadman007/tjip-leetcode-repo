@@ -342,6 +342,7 @@ public:
 
 
 //Meeting Room II
+
 class Solution {
 public:
     int minMeetingRooms(vector<Interval> &intervals) {
@@ -370,5 +371,33 @@ public:
         for(int i = 0; i <= LIM; i++) res = max(res, dif[i]);
 
         return res;
+    }
+};
+
+
+
+//31. Next Permutation
+
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int lftPos = 0, rhtPos = 0, flag = 0;
+        int sz = nums.size();
+        for(int i = sz-1; i > 0; i--){
+            if(nums[i] > nums[i-1]){
+                lftPos = i-1;
+                flag = 1;
+                break;
+            }
+        }
+        for(int j = sz-1; j >= 0; j--){
+            if(nums[lftPos] < nums[j]){
+                rhtPos = j;
+                break;
+            }
+        }
+        swap(nums[lftPos], nums[rhtPos]);
+        if(!flag) lftPos = -1;
+        reverse(nums.begin()+lftPos+1, nums.end());
     }
 };
