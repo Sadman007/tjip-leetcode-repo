@@ -460,3 +460,49 @@ public:
         reverse(nums.begin()+lftPos+1, nums.end());
     }
 };
+
+
+
+//380. Insert Delete GetRandom O(1)
+
+class RandomizedSet {
+    unordered_map<long long int, long long int> mp, index;
+    long long int MIN = -100000000000;
+    long long int k = 0;
+public:
+    RandomizedSet() {
+        
+    }
+    
+    bool insert(int val) {
+        k = fmax(0, k);
+        long long curVal = val*1LL;
+        if(!mp.count(curVal) || mp[curVal] == MIN) {
+            mp[curVal] = ++k;
+            index[k] = curVal;
+            return true;
+        }
+        else return false;
+    }
+    
+    bool remove(int val) {
+        long long curVal = val*1LL;
+        if(!mp.count(curVal) || mp[curVal] == MIN) return false;
+        else {
+            long long int removeIdx = mp[curVal]; // kon index e ache
+            mp[curVal] = MIN;
+            long long int lastValue = index[k];
+            index[removeIdx] = lastValue;
+            if(k != removeIdx) mp[lastValue] = removeIdx;
+            --k;
+            k = fmax(0, k);
+            return true;
+        }
+    }
+    
+    int getRandom() {
+        k = fmax(1, k);
+        long long int ret = 1 + rand()%k;
+        return index[ret];
+    }
+};
