@@ -50,6 +50,65 @@ public:
 };
 
 
+
+//18. 4Sum
+
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector< vector< pair<int, int> > > pos; //2D vector, stores pair of int
+        int cntIndex = 0;
+        map<int, int> mp;
+        set< vector<int> > res;
+        int sz = nums.size();
+        sort(nums.begin(), nums.end());
+        for(int i = 1; i < sz-1; i++){
+            for (int j = i+1; j < sz; j++){
+                int rhtValue = nums[i] + nums[j];
+                int lftValue = target - rhtValue;
+                if(mp.count(lftValue)){ // lftValue map e ache kina
+                    int index = mp[lftValue];
+                    int posSize = pos[index].size(); // lftValue kon vector e ache
+                    //lftValue = 8 hole, 4+4 or 5+3 evabe 8 hote pare
+                    // ejonno nicher loop diye sobgulo value result e add korchi
+                    for(int k = 0; k < posSize; k++){
+                        auto it = pos[index][k];
+                        int x = it.first, y = it.second;
+                        res.insert({x, y, nums[i], nums[j]});
+                    }
+                }
+            }
+            
+            for(int l = 0; l < i; l++){
+                int cur = nums[l] + nums[i]; 
+                if(mp.count(cur)){
+                    int index = mp[cur];
+                    bool isFound = 0;
+                    for(int k = 0; k < pos[index].size(); k++){
+                        auto it = pos[index][k];
+                        int x = it.first, y = it.second;
+                        if(x == nums[l] && y == nums[i]) isFound = 1; 
+                    }
+                    // aage ei pair ta store kora thakle ekhon ar store korbona
+                    if(!isFound) pos[index].push_back({nums[l], nums[i]});
+                }
+                else{
+                    vector<pair<int, int> > v;
+                    v.push_back({nums[l], nums[i]});
+                    pos.push_back(v);
+                    mp[cur] = cntIndex;
+                    cntIndex++;
+                }
+            }
+        }
+        vector< vector<int> > vec;
+        for(auto it : res) vec.push_back(it);
+        return vec;;
+    }
+};
+
+
+
 //41. First Missing Positive
 class Solution {
 public:
