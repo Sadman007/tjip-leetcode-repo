@@ -18,7 +18,7 @@ public:
 };
 /**....................................................................**/
 
-// T - O(nlogn), M - O(1)
+// T - O(nlogn), M - O(logn)
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
