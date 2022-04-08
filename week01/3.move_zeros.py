@@ -17,8 +17,7 @@ class Solution:
 
 
 #solution-2
-# 0(N) time | 0(N) space
-#vai can you tell me which is better?
+# 0(N) time | 0(1) space
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
