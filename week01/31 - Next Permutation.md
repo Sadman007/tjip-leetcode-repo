@@ -4,7 +4,7 @@
 
 #### Explanation
 
-![Next Permutation](./images/next_permutation.png)
+![Next Permutation](./images/31_next_permutation.png)
 
 #### Complexity
 
@@ -12,7 +12,7 @@ Time: `O(N)`
 
 Space: `O(1)`
 
-#### Solution
+#### Code
 
 ```cpp
 void nextPermutation(vector<int>& nums) {
