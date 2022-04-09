@@ -1,4 +1,4 @@
-### 15. [Next Permutation](https://leetcode.com/problems/next-permutation/) `Medium`
+### 31. [Next Permutation](https://leetcode.com/problems/next-permutation/) `Medium`
 
 ---
 

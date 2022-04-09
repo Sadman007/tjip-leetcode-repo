@@ -1,4 +1,4 @@
-### 1. [Two Sum](https://leetcode.com/problems/two-sum/)
+### 1. [Two Sum](https://leetcode.com/problems/two-sum/) `Easy`
 
 ---
 
@@ -21,5 +21,5 @@ vector<int> twoSum(vector<int>* nums, int target) {
 
 #### Explanation
 
-I took an unordered hash map. Then started iterating through every single element. Checked whether the remaining (`target - nums[i]`) element is found or not. 
+I took an unordered hash map. Then started iterating through every single element. Checked whether the remaining (`target - nums[i]`) element is found or not.
 If it is found, then return the positions of the elements.
