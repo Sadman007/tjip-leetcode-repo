@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        
+        set<int>check(nums.begin(),nums.end());
+        int majority_element=0;
+        int majority_count=0;
+        set<int >::iterator itr;
+        
+        for(itr = check.begin(); itr != check.end();itr++){
+            
+            int counts=std::count(nums.begin(),nums.end(),*itr);
+            if(counts>majority_count){
+                majority_count=counts;
+                majority_element=*itr;
+                
+                
+            }
+        }
+        return majority_element;
+    }
+};

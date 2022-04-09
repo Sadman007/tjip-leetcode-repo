@@ -1,0 +1,47 @@
+class Solution
+{
+public:
+    void nextPermutation(vector<int>& nums)
+    {
+
+        if(nums.size()>1 && nums.size()<=100)
+        {
+            int n1=nums.size()-1;
+            int n2=n1-1;
+            int x,x1,y,temp,temp2;
+            while(nums[n1]<=nums[n2])
+            {
+                n1--;
+                n2--;
+                if(n2<0)break;
+            }
+
+            if(n2<0)
+            {
+                x1=0;
+
+                reverse(nums.begin()+x1,nums.end());
+            }
+            else
+            {
+                x=n2;
+                x1=n1;
+                temp=x1;
+                while(nums[x]<nums[temp])
+                {
+                    temp++;
+
+                    if(temp>nums.size()-1)
+                        break;
+
+                }
+                y=temp-1;
+                swap(nums[x],nums[y]);
+
+                x1 = x1 % nums.size();
+
+                reverse(nums.begin()+x1,nums.end());
+            }
+        }
+    }
+};
