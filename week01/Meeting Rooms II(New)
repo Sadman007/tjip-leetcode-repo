@@ -1,0 +1,21 @@
+
+class Solution {
+ public:
+  int minMeetingRooms(vector<vector<int>>& intervals) {
+    if (intervals.empty())
+      return 0;
+
+    
+    priority_queue<int, vector<int>, greater<>> minHeap;
+
+    sort(begin(intervals), end(intervals));
+
+    for (const auto& it : intervals) {
+      if (!minHeap.empty() && it[0] >= minHeap.top())
+        minHeap.pop(); 
+      minHeap.push(it[1]);
+    }
+
+    return minHeap.size();
+  }
+};
