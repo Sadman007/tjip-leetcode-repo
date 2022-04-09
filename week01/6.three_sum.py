@@ -23,3 +23,19 @@ class Solution:
                         l += 1
                     
         return result
+
+#second approach: using hashmap:
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        result = set()
+        seen = set()
+        target = 0
+        n = len(nums)
+        for i in range(n):
+            for j in range(i+1, n):
+                val = target - nums[i] -nums[j]
+                if val in seen:
+                    arr = sorted([val, nums[i], nums[j]])
+                    result.add((arr[0], arr[1], arr[2]))
+            seen.add(nums[i])
+        return result
