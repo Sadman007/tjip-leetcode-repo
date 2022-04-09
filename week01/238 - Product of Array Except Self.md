@@ -2,11 +2,21 @@
 
 ---
 
-#### Solution
+#### Explanation
+
+![Product of Array Except Self](./images/238_product_of_array_except_self.png)
+
+#### Complexity
+
+Time: `O(N)`
+
+Space: `O(1)`
+
+#### Code
 
 ```cpp
 vector<int> productExceptSelf(vector<int>& nums) {
-    int size = nums.size(), prefix = 1, postfix = 1; 
+    int size = nums.size(), prefix = 1, postfix = 1;
     vector<int> result(size, 1);
 
     for (int i = 0; i < size; i++) {
@@ -22,13 +32,3 @@ vector<int> productExceptSelf(vector<int>& nums) {
     return result;
 }
 ```
-
-#### Complexity
-
-Time: `O(N)`
-
-Space: `O(1)`
-
-#### Explanation
-
-<img src="file:///C:/Users/SUSMOY%20SEN%20GUPTA/AppData/Roaming/marktext/images/2022-04-03-12-47-31-image.png" title="" alt="" data-align="center">
