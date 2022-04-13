@@ -1,0 +1,30 @@
+public class Solution {
+    public int LongestConsecutive(int[] nums) {
+        var  dic = new Dictionary<int, bool>();
+        for(int i =0; i <nums.Length; i++)
+            if(!dic.ContainsKey(nums[i]))
+               dic.Add(nums[i], true);
+      
+        for(int i =0; i <nums.Length; i++){
+            if(dic.ContainsKey(nums[i] - 1)){
+                dic[nums[i]]= false;
+            }
+        }
+        
+        int max = 0;
+        foreach(var e in dic){
+            if(dic[e.Key] == true){
+                max = Math.Max(max, findLength(dic, e.Key));
+             }
+       }
+        return max; 
+    }
+    public  int findLength(Dictionary<int, bool> dic, int k){
+        int ans  = 0;
+        while(dic.ContainsKey(k)){
+            ans++;
+            k++;
+        }
+        return ans;
+    }
+}
