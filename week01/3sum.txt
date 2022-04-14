@@ -27,6 +27,7 @@ public:
             while (i<len-3 && nums[i] == nums[i+1]) i++;
             i++;
         }
+
         return result;
     }
 };
