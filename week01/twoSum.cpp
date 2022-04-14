@@ -1,5 +1,5 @@
 #include "bits/stdc++.h"
-vector <int> towSum(vector<int> &sums, int target)
+vector<int>towSum(vector<int> &sums, int target)
 {
 	unordered_map<int,int> seen;
 	for(int i = 0; i < nums.size(); i++)
