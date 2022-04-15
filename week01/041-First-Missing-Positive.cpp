@@ -17,7 +17,7 @@ public:
         return 0;
     }
 
-    // Optimal |  Time - O(n) | Space - O(n) // Put each number in its right place.
+    // Optimal |  Time - O(n) | Space - O(1) // Put each number in its right place.
     int firstMissingPositive2(vector<int>& nums)
     {
         int n=nums.size();
