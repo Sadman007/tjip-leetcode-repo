@@ -1,4 +1,4 @@
-// TC: O(N)
+// TC: O(1) each operation
 // MC: O(N)
 class RandomizedSet {
 public:
