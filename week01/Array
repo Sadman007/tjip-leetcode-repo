@@ -1,4 +1,6 @@
 //1. Two Sum
+//TC: O(n)
+//MC: O(n)
 
 class Solution {
 public:
@@ -26,7 +28,7 @@ public:
         vector<vector<int>> res;
         int n = nums.size();
         for(int i = 0; i < n-2; i++){
-            
+
             int lft = i+1, rht = n-1;
             while(lft < rht){
                 if(nums[i] + nums[lft] + nums[rht] == 0) {
@@ -36,9 +38,9 @@ public:
                     v.push_back(nums[rht]);
                     res.push_back(v);
                     while(lft < rht-1 && nums[lft] == nums[lft+1]) lft++;
-                    while(rht > lft && nums[rht] == nums[rht-1]) rht--; 
+                    while(rht > lft && nums[rht] == nums[rht-1]) rht--;
                 }
-                
+
                 int rem = 0 - nums[i];
                 if(rem < nums[lft] + nums[rht]) rht--;
                 else lft++;
@@ -78,16 +80,16 @@ public:
                     }
                 }
             }
-            
+
             for(int l = 0; l < i; l++){
-                int cur = nums[l] + nums[i]; 
+                int cur = nums[l] + nums[i];
                 if(mp.count(cur)){
                     int index = mp[cur];
                     bool isFound = 0;
                     for(int k = 0; k < pos[index].size(); k++){
                         auto it = pos[index][k];
                         int x = it.first, y = it.second;
-                        if(x == nums[l] && y == nums[i]) isFound = 1; 
+                        if(x == nums[l] && y == nums[i]) isFound = 1;
                     }
                     // aage ei pair ta store kora thakle ekhon ar store korbona
                     if(!isFound) pos[index].push_back({nums[l], nums[i]});
@@ -229,7 +231,7 @@ public:
     int singleNumber(vector<int>& nums) {
         int res = 0;
         for(int i = 0; i < nums.size(); i++) res ^= nums[i];
-        
+
         return res;
     }
 };
@@ -471,9 +473,9 @@ class RandomizedSet {
     long long int k = 0;
 public:
     RandomizedSet() {
-        
+
     }
-    
+
     bool insert(int val) {
         k = fmax(0, k);
         long long curVal = val*1LL;
@@ -484,7 +486,7 @@ public:
         }
         else return false;
     }
-    
+
     bool remove(int val) {
         long long curVal = val*1LL;
         if(!mp.count(curVal) || mp[curVal] == MIN) return false;
@@ -499,7 +501,7 @@ public:
             return true;
         }
     }
-    
+
     int getRandom() {
         k = fmax(1, k);
         long long int ret = 1 + rand()%k;
