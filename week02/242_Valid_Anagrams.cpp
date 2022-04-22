@@ -1,4 +1,4 @@
-//242. Valid Anagram.cpp
+//242. Valid Anagram
 //TC: O(|S|)
 //MC: O(1)
 
