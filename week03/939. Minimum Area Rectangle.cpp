@@ -1,5 +1,6 @@
 // TC = O(N^2)
 // MC = O(N)
+// https://youtu.be/IQKIm0wEu4w
 class Solution {
 public:
     int minAreaRect(vector<vector<int>>& points) {
@@ -23,7 +24,7 @@ public:
         return minArea==INT_MAX/2? 0:minArea;
     }
 };
-// https://youtu.be/IQKIm0wEu4w
+
 /***************************************************/
 
 // given TLE
