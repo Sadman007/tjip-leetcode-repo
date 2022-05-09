@@ -11,11 +11,7 @@ using namespace std;
 
 
 int main(){
-    fread //for faster I/O
-    #ifndef ONLINE_JUDGE
-    freopen("ip.txt", "r", stdin);
-    //freopen("out.txt", "w", stdin);
-    #endif
+
 
     int T = 1; //cin>>T;
     for(int tc = 1; tc <= T; tc++){
