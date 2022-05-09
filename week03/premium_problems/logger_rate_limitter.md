@@ -34,3 +34,83 @@ logger.shouldPrintMessage(11, "foo"); // 11 >= 11, return true, next allowed tim
 - Every `timestamp` will be passed in non-decreasing order (chronological order).
 - `1 <= message.length <= 30`
 - <code>At most 10<sup>4</sup> calls will be made to `shouldPrintMessage`. </code>
+
+### Function Signatures
+#### C++
+```c++
+class Logger {
+public:
+    Logger() {
+        
+    }
+    
+    bool shouldPrintMessage(int timestamp, string message) {
+        
+    }
+};
+
+/**
+ * Your Logger object will be instantiated and called as such:
+ * Logger* obj = new Logger();
+ * bool param_1 = obj->shouldPrintMessage(timestamp,message);
+ */
+```
+
+#### C#
+```cs
+public class Logger {
+
+    public Logger() {
+        
+    }
+    
+    public bool ShouldPrintMessage(int timestamp, string message) {
+        
+    }
+}
+
+/**
+ * Your Logger object will be instantiated and called as such:
+ * Logger obj = new Logger();
+ * bool param_1 = obj.ShouldPrintMessage(timestamp,message);
+ */
+```
+#### JS
+
+```js
+
+var Logger = function() {
+    
+};
+
+/** 
+ * @param {number} timestamp 
+ * @param {string} message
+ * @return {boolean}
+ */
+Logger.prototype.shouldPrintMessage = function(timestamp, message) {
+    
+};
+
+/** 
+ * Your Logger object will be instantiated and called as such:
+ * var obj = new Logger()
+ * var param_1 = obj.shouldPrintMessage(timestamp,message)
+ */
+```
+
+#### Python3
+```python
+class Logger:
+
+    def __init__(self):
+        
+
+    def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
+        
+
+
+# Your Logger object will be instantiated and called as such:
+# obj = Logger()
+# param_1 = obj.shouldPrintMessage(timestamp,message)        
+```
