@@ -1,6 +1,5 @@
-#include<bits/stdc++.h>
-using namespace std;
-// TC = O(
+// TC = O(n*m)
+// MC = O(n)
 class Solution{
 public:
     const static long long MOD = 202206214218227LL;
@@ -38,19 +37,3 @@ public:
         return false;
     }
 };
-//{"abcd","acbd","aacd"} -true
-//{"ab","cd","yz"} - false
-//{"abcd","cccc","abyd","abab"} - true
-int main()
-{
-
-    vector<string> v1 = {"abcd","acbd","aacd"};
-    vector<string> v2 = {"ab","cd","yz"};
-    vector<string> v3 = {"abcd","cccc","abyd","abab"};
-    Solution sol;
-    cout<<sol.differByOne(v1)<<endl;
-    cout<<sol.differByOne(v2)<<endl;
-    cout<<sol.differByOne(v3)<<endl;
-
-}
-
