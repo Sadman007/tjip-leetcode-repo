@@ -28,3 +28,42 @@ Given an array of strings strings, group all `strings[i]` that belong to the sam
 - `1 <= strings.length <= 200`
 - `1 <= strings[i].length <= 50`
 - `strings[i]` consists of lowercase English letters.
+
+
+### Function Signatures
+#### C++
+```c++
+class Solution {
+public:
+    vector<vector<string>> groupStrings(vector<string>& strings) {
+        
+    }
+};
+```
+
+#### C#
+```cs
+public class Solution {
+    public IList<IList<string>> GroupStrings(string[] strings) {
+        
+    }
+}
+```
+#### JS
+
+```js
+/**
+ * @param {string[]} strings
+ * @return {string[][]}
+ */
+var groupStrings = function(strings) {
+    
+};
+```
+
+#### Python3
+```python
+class Solution:
+    def groupStrings(self, strings: List[str]) -> List[List[str]]:
+        
+```
