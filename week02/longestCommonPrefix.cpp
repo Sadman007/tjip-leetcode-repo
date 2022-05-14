@@ -9,7 +9,7 @@ string findLCP(string &a, string &b)
 	}
 	return a.substr(0,idx);
 }
-string longestCommonPrefix(std::vector<string>& strs;)
+string longestCommonPrefix(vector<string>& strs)
 {
 	string lcp = strs[0];
 	for(auto str : strs)
