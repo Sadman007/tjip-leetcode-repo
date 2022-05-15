@@ -14,9 +14,9 @@ bool cmp(int &a, int &b){
 class Solution {
 public:
     string largestNumber(vector<int>& nums) {
-        sort(nums.begin(),nums.end(),cmp);
+        sort(nums.begin(),nums.end(),cmp); //O(k*logN)
         string res = "";
-        for(int i = 0; i < nums.size(); i++){
+        for(int i = 0; i < nums.size(); i++){ //O(N)
             if(res=="" && nums[i]==0 && i+1<nums.size()) continue;//Input = [0,0], Output = "00", Expected = "0"
             res += to_string(nums[i]);
         }
