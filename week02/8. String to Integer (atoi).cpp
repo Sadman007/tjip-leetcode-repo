@@ -1,5 +1,5 @@
-// O(N)
-// O(1)
+// TC = O(N)
+// MC = O(1)
 class Solution {
 public:
     int myAtoi(string s) {
