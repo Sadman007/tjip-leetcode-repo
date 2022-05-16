@@ -21,6 +21,9 @@ If filePath already exists, appends the given content to original content.
 
 
 ### Example 1:
+
+![alt text](https://www.linkpicture.com/q/filesystem.png)
+
 **Input**
 
 ```
@@ -93,4 +96,102 @@ public:
  * obj->addContentToFile(filePath,content);
  * string param_4 = obj->readContentFromFile(filePath);
  */
+```
+
+#### Java
+```java
+class FileSystem {
+
+    public FileSystem() {
+        
+    }
+    
+    public List<String> ls(String path) {
+        
+    }
+    
+    public void mkdir(String path) {
+        
+    }
+    
+    public void addContentToFile(String filePath, String content) {
+        
+    }
+    
+    public String readContentFromFile(String filePath) {
+        
+    }
+}
+
+/**
+ * Your FileSystem object will be instantiated and called as such:
+ * FileSystem obj = new FileSystem();
+ * List<String> param_1 = obj.ls(path);
+ * obj.mkdir(path);
+ * obj.addContentToFile(filePath,content);
+ * String param_4 = obj.readContentFromFile(filePath);
+ */
+```
+
+#### C#
+```cs
+public class FileSystem {
+
+    public FileSystem() {
+        
+    }
+    
+    public IList<string> Ls(string path) {
+        
+    }
+    
+    public void Mkdir(string path) {
+        
+    }
+    
+    public void AddContentToFile(string filePath, string content) {
+        
+    }
+    
+    public string ReadContentFromFile(string filePath) {
+        
+    }
+}
+
+/**
+ * Your FileSystem object will be instantiated and called as such:
+ * FileSystem obj = new FileSystem();
+ * IList<string> param_1 = obj.Ls(path);
+ * obj.Mkdir(path);
+ * obj.AddContentToFile(filePath,content);
+ * string param_4 = obj.ReadContentFromFile(filePath);
+ */
+```
+
+#### Python3
+```python
+class FileSystem:
+
+    def __init__(self):
+        
+
+    def ls(self, path: str) -> List[str]:
+        
+
+    def mkdir(self, path: str) -> None:
+        
+
+    def addContentToFile(self, filePath: str, content: str) -> None:
+        
+
+    def readContentFromFile(self, filePath: str) -> str:
+        
+
+
+# Your FileSystem object will be instantiated and called as such:
+# obj = FileSystem()
+# param_1 = obj.ls(path)
+# obj.mkdir(path)
+# obj.addContentToFile(filePath,content)
+# param_4 = obj.readContentFromFile(filePath)
 ```
