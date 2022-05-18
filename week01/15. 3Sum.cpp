@@ -87,7 +87,7 @@ public:
                     result.push_back({nums[i], nums[leftP], nums[rightP]});
 
                     leftP++;
-                    while(nums[leftP]==nums[leftP-1] && leftP<rightP) leftP++;
+                    while(nums[leftP]==nums[leftP-1] && leftP<rightP) leftP++; // [-2,-2,-2,0,0,2,2]
 
                 }
                 else if(sum > 0){
