@@ -79,7 +79,7 @@ public:
         vector<vector<int> > result;
 
         for(int i=0;i<len-2;i++){
-            if(i>0 && nums[i]==nums[i-1]) continue;
+            if(i>0 && nums[i]==nums[i-1]) continue;// [-3, -3, 1, 2, 3, 4]...nums[i]==nums[i-1] hoile duplicate tuple(-3, 1, 2) chole ase..tai ei condition
             leftP = i+1, rightP = len-1;
             while(leftP<rightP){
                 int sum = nums[i] + nums[leftP] + nums[rightP];
