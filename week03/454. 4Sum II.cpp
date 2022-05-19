@@ -2,6 +2,8 @@
 // MC: O(N * N)
 class Solution {
 public:
+    // a+b+c+d = 0
+    // (a+b) = -(c+d)
     int fourSumCount(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3, vector<int>& nums4) {
         unordered_map<int,int> ab;
         int tuples = 0;
