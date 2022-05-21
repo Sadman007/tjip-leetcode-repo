@@ -1,0 +1,52 @@
+class TrieNode{
+    public:
+  bool isWord;
+  TrieNode* next[26];
+    
+    TrieNode(){
+          isWord = false;
+        for (int i = 0; i<26;i++){
+            next[i] = NULL;
+        }
+    }
+};
+class Trie {
+public:
+   TrieNode* root;
+    
+    Trie() {
+        root = new TrieNode();
+    }
+    
+    void insert(string word) {
+        TrieNode* currentNode = root;
+        
+        for(auto c:word){
+            int order = c-'a';
+            
+            if(currentNode->next[order] == NULL){
+                currentNode->next[order] = new TrieNode();
+            }
+            currentNode = currentNode->next[order];
+        }
+        currentNode->isWord = true;
+    }
+    
+    bool search(string word, bool isPrefix = false) {
+         TrieNode* currentNode = root;
+        
+        for(auto c:word){
+            int order = c-'a';
+            
+            if(currentNode->next[order] == NULL){
+                return false;
+            }
+            currentNode = currentNode->next[order];
+        }
+        return (currentNode->isWord || isPrefix)  && currentNode;
+    }
+    
+    bool startsWith(string prefix) {
+        return search(prefix,true);
+    }
+};
