@@ -1,5 +1,5 @@
 /**
-Time: O(S), S = total number of characters in words
+Time: O(N * S), S = total number of characters in words, N = length of string s
 Memory: O(S)
 **/
 
