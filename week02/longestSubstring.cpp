@@ -3,7 +3,7 @@ using namespace std;
 int lengthOfLongestSubstring(string s)
 {
 	vector<int>freq(256, 0);
-	int L = 0, R = 0, cnt = 0;
+	int L = 0, R = 0, cnt = 0; 
 	int longestLength = 0;
 	while(R < s.size())
 	{
