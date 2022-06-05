@@ -12,4 +12,3 @@
  {
      return validateBST(root, LLONG_MIN, LLONG_MAX);
  }
- 
